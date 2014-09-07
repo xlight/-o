@@ -20,7 +20,7 @@ class Model_Source_Betradar_Participate extends OK_ActiveRecord_Abstract
 				'props' => array (
 					// 主键应该是只读，确保领域对象的“不变量”
 					'id' => array('readonly' => true),
-					'team' => array(OK_DB::HAS_MANY => 'Model_Source_Betradar_Team','source_key' => 'team_id','target_key' => 'id'),
+					'team' => array(OK_DB::HAS_ONE => 'Model_Source_Betradar_Team','source_key' => 'team_id','target_key' => 'id'),
 					),
 
 				/**
