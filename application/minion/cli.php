@@ -4,6 +4,7 @@ class Minion_CLI {
 
 	public static $wait_msg = 'Press any key to continue...';
 
+	protected static $is_windows = false;
 	protected static $foreground_colors = array(
 		'black'        => '0;30',
 		'dark_gray'    => '1;30',
