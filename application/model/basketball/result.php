@@ -1,5 +1,5 @@
 <?php
-class Model_Basketball_Participate extends OK_ActiveRecord_Abstract
+class Model_Basketball_Result extends OK_ActiveRecord_Abstract
 {
 	/**
 	 * 返回对象的定义
@@ -12,7 +12,7 @@ class Model_Basketball_Participate extends OK_ActiveRecord_Abstract
 	{
 		return array (
 				// 用什么数据表保存对象
-				'table_name' => 'participate',          
+				'table_name' => 'result_score',          
 				'table_config' => array('dsn'	=> 'data_basketball'),
 
 				// 指定数据表记录字段与对象属性之间的映射关系

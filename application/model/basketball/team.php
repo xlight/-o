@@ -1,5 +1,5 @@
 <?php
-class Model_Basketball_Participate extends OK_ActiveRecord_Abstract
+class Model_Basketball_Team extends OK_ActiveRecord_Abstract
 {
 	/**
 	 * 返回对象的定义
@@ -12,7 +12,7 @@ class Model_Basketball_Participate extends OK_ActiveRecord_Abstract
 	{
 		return array (
 				// 用什么数据表保存对象
-				'table_name' => 'participate',          
+				'table_name' => 'team',          
 				'table_config' => array('dsn'	=> 'data_basketball'),
 
 				// 指定数据表记录字段与对象属性之间的映射关系
@@ -20,7 +20,6 @@ class Model_Basketball_Participate extends OK_ActiveRecord_Abstract
 				'props' => array (
 					// 主键应该是只读，确保领域对象的“不变量”
 					'id' => array('readonly' => true),
-					'team' => array(OK_DB::HAS_ONE => 'Model_Basketball_Team','source_key' => 'team_id','target_key' => 'id'),
 					),
 
 				/**
