@@ -2,7 +2,7 @@
 class Model_Source_Betradar_RoundInfo extends OK_ActiveRecord_Abstract
 {
 	/**
-	 * ���ض���Ķ���
+	 * 返回对象的定义
 	 *
 	 * @static
 	 *
@@ -11,48 +11,48 @@ class Model_Source_Betradar_RoundInfo extends OK_ActiveRecord_Abstract
 	static function __define()
 	{
 		return array (
-				// ��ʲô���ݱ��������
+				// 用什么数据表保存对象
 				'table_name' => 'roundinfo',          
 				'table_config' => array('dsn'	=> 'source_betradar'),
 
-				// ָ�����ݱ���¼�ֶ����������֮���ӳ���ϵ
-				// û���ڴ˴�ָ�������ԣ�QeePHP ���Զ����ý�����ӳ��Ϊ����Ŀɶ�д����
+				// 指定数据表记录字段与对象属性之间的映射关系
+				// 没有在此处指定的属性，QeePHP 会自动设置将属性映射为对象的可读写属性
 				'props' => array (
-					// ����Ӧ����ֻ����ȷ���������ġ���������
+					// 主键应该是只读，确保领域对象的“不变量”
 					'id' => array('readonly' => true),
 					),
 
 				/**
-				 * ����ʹ�� mass-assignment ��ʽ��ֵ������
+				 * 允许使用 mass-assignment 方式赋值的属性
 				 *
-				 * ���ָ���� attr_accessible������� attr_protected �����á�
+				 * 如果指定了 attr_accessible，则忽略 attr_protected 的设置。
 				 */
 				'attr_accessible' => '',
 
 				/**
-				 * �ܾ�ʹ�� mass-assignment ��ʽ��ֵ������
+				 * 拒绝使用 mass-assignment 方式赋值的属性
 				 */
 				'attr_protected' => 'recid',
 
 				/**
-				 * ָ�������ݿ��д�������ʱ����Щ���Ե�ֵ���������ⲿ�ṩ
+				 * 指定在数据库中创建对象时，哪些属性的值不允许由外部提供
 				 *
-				 * ����ָ�������Ի��ڴ�����¼ʱ�����˵����Ӷ������ݿ��������ֵ��
+				 * 这里指定的属性会在创建记录时被过滤掉，从而让数据库自行填充值。
 				 */
 				'create_reject' => '',
 
 				/**
-				 * ָ���������ݿ��еĶ���ʱ����Щ���Ե�ֵ���������ⲿ�ṩ
+				 * 指定更新数据库中的对象时，哪些属性的值不允许由外部提供
 				 */
 				'update_reject' => '',
 
 				/**
-				 * ָ�������ݿ��д�������ʱ����Щ���Ե�ֵ������ָ�������ݽ��и���
+				 * 指定在数据库中创建对象时，哪些属性的值由下面指定的内容进行覆盖
 				 *
-				 * ������ֵΪ self::AUTOFILL_TIMESTAMP �� self::AUTOFILL_DATETIME��
-				 * ���������Ե��������Զ���䵱ǰʱ�䣨�������ַ�������
+				 * 如果填充值为 self::AUTOFILL_TIMESTAMP 或 self::AUTOFILL_DATETIME，
+				 * 则会根据属性的类型来自动填充当前时间（整数或字符串）。
 				 *
-				 * ������ֵΪһ�����飬��ٶ�Ϊ callback ������
+				 * 如果填充值为一个数组，则假定为 callback 方法。
 				 */
 				'create_autofill' => array (
 						'create_time'   => self::AUTOFILL_DATETIME ,
@@ -60,33 +60,33 @@ class Model_Source_Betradar_RoundInfo extends OK_ActiveRecord_Abstract
 						),
 
 				/**
-				 * ָ���������ݿ��еĶ���ʱ����Щ���Ե�ֵ������ָ�������ݽ��и���
+				 * 指定更新数据库中的对象时，哪些属性的值由下面指定的内容进行覆盖
 				 *
-				 * ���ֵ��ָ������ͬ create_autofill
+				 * 填充值的指定规则同 create_autofill
 				 */
 				'update_autofill' => array (
 						'update_time'   => self::AUTOFILL_DATETIME ,
 						),
 
 				/**
-				 * �ڱ������ʱ���ᰴ������ָ������֤���������֤����֤ʧ�ܻ��׳��쳣��
+				 * 在保存对象时，会按照下面指定的验证规则进行验证。验证失败会抛出异常。
 				 *
-				 * �����ڱ���ʱ�Զ���֤��������ͨ������� ::meta()->validate() �������������ݽ�����֤��
+				 * 除了在保存时自动验证，还可以通过对象的 ::meta()->validate() 方法对数组数据进行验证。
 				 */
 				'validations' => array (),
 
-				// ָ���� ActiveRecord Ҫʹ�õ���Ϊ���
+				// 指定该 ActiveRecord 要使用的行为插件
 				'behaviors' => '',
 
-				// ָ����Ϊ���������
+				// 指定行为插件的配置
 				'behaviors_settings' => array (),
 
 				);
 	}
-/* ------------------ �������Զ����ɵĴ��룬�����޸� ------------------ */
+/* ------------------ 以下是自动生成的代码，不能修改 ------------------ */
 
 	/**
-	 * ����һ����ѯ�����ҷ��������Ķ������󼯺�
+	 * 开启一个查询，查找符合条件的对象或对象集合
 	 *
 	 * @static
 	 *
@@ -99,7 +99,7 @@ class Model_Source_Betradar_RoundInfo extends OK_ActiveRecord_Abstract
 	}
 
 	/**
-	 * ���ص�ǰ ActiveRecord ���Ԫ���ݶ���
+	 * 返回当前 ActiveRecord 类的元数据对象
 	 *
 	 * @static
 	 *
@@ -111,12 +111,12 @@ class Model_Source_Betradar_RoundInfo extends OK_ActiveRecord_Abstract
 	}
     
    /** 
-    * ִ��һ��SQL��� , ���ִ�еĲ�ѯ�� SELECT �Ȼ᷵�ؽ�����Ĳ�����
-    * �� execute() ִ�гɹ���᷵��һ�� Result ����ʧ��ʱ���׳��쳣��
-    * ��ò�ѯ�����ݣ���Ҫ���� Result ����� fetchAll() �ȷ�����
+    * 执行一条SQL语句 , 如果执行的查询是 SELECT 等会返回结果集的操作，
+    * 则 execute() 执行成功后会返回一个 Result 对象，失败时将抛出异常。
+    * 获得查询的数据，需要调用 Result 对象的 fetchAll() 等方法。
     *
-    * @param sting $sql SQL ����ʽ ֧��ռλ�� ?
-    * @param array $inputarr SQL ռλ���������
+    * @param sting $sql SQL 表达式 支持占位符 ?
+    * @param array $inputarr SQL 占位符替代变量
     * @return OK_Result_Mysql | Boolean
     */
     static function dbtool($sql , $inputarr = null)
@@ -127,5 +127,5 @@ class Model_Source_Betradar_RoundInfo extends OK_ActiveRecord_Abstract
 	{
 		return self::meta()->table->getConn(0)->execute($sql , $inputarr);
 	}
-/* ------------------ �������Զ����ɵĴ��룬�����޸� ------------------ */
+/* ------------------ 以上是自动生成的代码，不能修改 ------------------ */
 }
